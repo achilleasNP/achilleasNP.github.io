@@ -1,5 +1,5 @@
 ---
-title: Equivalence relations, partitions and counting
+title: Equivalence relations, partitions and counting. 
 layout:  post
 --- 
 
@@ -22,8 +22,14 @@ So the equivalence classes split the set S to pairwise disjoint sets (that is th
 Assume that we have a function $$f: S \mapsto  R $$ such that $$ f(a) = f(b) \Leftrightarrow a \sim b \;\;(1). $$
 Then the number of distinct values that the function S takes is equal to the number of equivalence classes.
 
-So let's take now the case where S is a set SNPs. We can define the following relation we say that two SNPs are equivalent if the genotype vector for the population under study (of size n) for the two SNPs is identical.  The relation just defined is an equivalence relation. 
+Consider a set of single nucleotide polymorphisms(SNPs). For the population under study (say of size n) each SNP can be represented as a genotype vector.  We can define the following relation we say that two SNPs are equivalent if the genotype vector for the population under study (of size n) for the two SNPs is identical.  It is easy to check that the relation just defined is an equivalence relation. 
 
-Consider the function $$f(SNP)=\sum_{i=1}^{n} 3^i g_i$$
-where `\(g_i\)` is the 0,1,2 genotype at SNP for the i-th individual. This function maps the genotype vector to an integer by considering the vector as a base 3 representation of an integer. It is easy to show that for a fixed base k  and number has a unique representation. So the function f satisfies condition (1).
+Define,   $$f(SNP)=\sum_{i=1}^{n} 3^i g_i$$
+where `\(g_i\)` is the 0,1,2 genotype at SNP for the i-th individual. This function maps the genotype vector to an integer by considering the vector as a base 3 representation of an integer. For a fixed base k, any number has a unique representation. So the function f satisfies condition (1).
+
 Therefore the number of values that the function f takes over the set of SNPs S is equal to the number of distinct SNPs.
+
+One of the limitations of our equivalence relation is that if we pick a genotype vector and recode reversing the role of the two alleles, then the original vector and recoded vector are not equivalent. Note that if we have a genotype vector $$ g = \\{ g_i\\}$$ then the recoded vector would be $$ \bar{g} = \\{ 2-g_i\\}$$. 
+Redefining the equivalence relation as folllows: two SNPs are equivalent if either the genotype vectors for the two SNPs are identical or if the recoded genotype vector for the first SNP is identical to the genotype vector of the second one, fixes this limitation. With this definition, we can use the function $$\bar{f}(SNP) = \min(f(SNP), f(\bar{SNP}))$$ to count the number of equivalence classes. To deal with missing genotypes we define any SNP with a missing genotype to be equivalent only to itself. Since there are only three possibilities for a missing value, this is an overestimate of the number of distinct genotypes. 
+
+  
