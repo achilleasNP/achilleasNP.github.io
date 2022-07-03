@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Galaxy Book Pro and nixos"
+title:  "Galaxy Book Pro and NixOS"
 date:   2022-06-17 12:01:09 +0200
 categories: gbook linux
 ---
@@ -37,9 +37,9 @@ is my go to distro. I ended up using Manjaro the sway edition (which I used
 previously with my pinebook pro). I found the defaults of the Manjaro sway gave
 a pleasant user experience, so much so, that I considered switching from xmonad
 on my other systems. I would have kept it, if I hadn't decided to complicate my
-life again and try nixos one more time.
+life again and try NixOS one more time.
 
 I have started with NixOS version 21.11, but the kernel didn't support my wireless interface.
-After a bit of searching around, I found that you can get nixos image with the latest linuxPackages_latest from
+After a bit of searching around, I found that you can get NixOS image with the latest linuxPackages_latest from
 Hydra as discussed here <https://discourse.nixos.org/t/how-to-get-a-nixos-image-with-newer-kernel/17334>.
-The image with the newer kernel did the trick and started me on my Nixos journey.
+The image with the newer kernel did the trick and started me on my NixOS journey.
